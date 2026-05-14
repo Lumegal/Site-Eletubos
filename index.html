@@ -52,6 +52,7 @@
       justify-content: center;
       border-right: 1px solid #ddd;
       padding: 20px;
+      text-decoration: none;
     }
 
     .logo-placeholder {
@@ -67,7 +68,7 @@
 
     nav {
       flex: 1;
-      background: #0d47b7;
+      background: #123C90;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -187,7 +188,7 @@
     }
 
     .hero-content button {
-      background: #005bb5;
+      background: #005EA8;
       color: white;
       border: none;
       border-radius: 12px;
@@ -200,6 +201,11 @@
 
     .hero-content button:hover {
       background: #004494;
+    }
+
+    .hero-content h1,
+    .hero-content button {
+      transition: opacity 0.4s ease;
     }
 
     /* SETAS */
@@ -250,17 +256,129 @@
     }
 
     .info-container {
-      width: 100%;
       min-height: 350px;
-      background-color: #004494;
 
       display: flex;
       justify-content: center;
       align-items: center;
 
       gap: 40px;
-      padding: 60px;
       align-items: flex-start;
+    }
+
+    .info-section {
+      width: 100%;
+      padding: 100px 60px;
+      background: linear-gradient(135deg, #005EA8, #004494);
+    }
+
+    .info-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .info-header h1 {
+      color: white;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .info-line {
+      width: 90px;
+      height: 4px;
+      background: #ffb400;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    .info-container {
+      max-width: 1500px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .info-card {
+      flex: 1;
+      min-width: 320px;
+      max-width: 420px;
+
+      background: rgba(255, 255, 255, 0.1);
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      border-radius: 24px;
+
+      padding: 50px 35px;
+
+      backdrop-filter: blur(8px);
+
+      transition: 0.35s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .info-icon {
+      width: 90px;
+      height: 90px;
+
+      border-radius: 50%;
+      background: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 30px;
+    }
+
+    .info-icon i {
+      font-size: 38px;
+      color: #005EA8;
+    }
+
+    .info-card h2 {
+      color: white;
+      font-size: 34px;
+      margin-bottom: 25px;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .info-card ul {
+      padding-left: 20px;
+    }
+
+    .info-card li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 900px) {
+
+      .info-section {
+        padding: 80px 25px;
+      }
+
+      .info-header h1 {
+        font-size: 42px;
+      }
+
+      .info-card {
+        max-width: 100%;
+      }
+
     }
 
     .item {
@@ -355,7 +473,7 @@
 
     .porque-section {
       width: 100%;
-      background: #004494;
+      background: #005EA8;
 
       padding: 100px 60px;
 
@@ -390,6 +508,7 @@
       align-items: stretch;
 
       gap: 50px;
+      margin-bottom: 20px;
     }
 
     .porque-item {
@@ -497,7 +616,6 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      margin-top: 35px;
     }
 
     .contato-formulario input,
@@ -534,7 +652,7 @@
       border: none;
       border-radius: 10px;
 
-      background: #004494;
+      background: white;
       color: white;
 
       font-size: 18px;
@@ -667,7 +785,7 @@
       width: 100%;
 
       display: flex;
-      align-items: stretch;
+      align-items: center;
       justify-content: space-between;
     }
 
@@ -784,11 +902,10 @@
 </head>
 
 <body>
-
   <header>
-    <div class="logo-area">
+    <a href="#hero" class="logo-area">
       <img src="assets\Logo Eletubos.png" alt="Eletubos Logo" style="resize: both; overflow: auto;" />
-    </div>
+    </a>
 
     <nav>
       <a href="#hero">ELETUBOS</a>
@@ -814,11 +931,15 @@
     <div class="arrow right">&#10095;</div>
 
     <div class="hero-content">
-      <h1>
+
+      <h1 id="hero-title">
         Solicite seu orçamento!
       </h1>
 
-      <button>Saiba mais</button>
+      <button id="hero-button">
+        Saiba mais
+      </button>
+
     </div>
 
     <div class="dots">
@@ -829,8 +950,8 @@
 
   </section>
 
-
-  <section class="info-container" id="hero">
+  <!-- V1 -->
+  <!-- <section class="info-container" id="hero">
 
     <div class="item">
       <h2>Missão</h2>
@@ -862,6 +983,67 @@
       </p>
     </div>
 
+  </section> -->
+
+  <!-- V2 -->
+  <section class="info-section">
+
+    <div class="info-header">
+      <h1>NOSSOS PRINCÍPIOS</h1>
+      <div class="info-line"></div>
+    </div>
+
+    <div class="info-container">
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          <i class="fa-solid fa-crosshairs"></i>
+        </div>
+
+        <h2>Missão</h2>
+
+        <p>
+          Fornecer produtos de qualidade, garantindo segurança e a satisfação dos nossos clientes.
+        </p>
+
+      </div>
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          <i class="fa-solid fa-eye"></i>
+        </div>
+
+        <h2>Visão</h2>
+
+        <p>
+          Ser referência no segmento elétrico, oferecendo produtos certificados e construindo parcerias duradouras com
+          nossos clientes.
+        </p>
+
+      </div>
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          <i class="fa-solid fa-gem"></i>
+        </div>
+
+        <h2>Valores</h2>
+
+        <ul>
+          <li>Qualidade</li>
+          <li>Ética e transparência</li>
+          <li>Satisfação do cliente</li>
+          <li>Agilidade e eficiência</li>
+          <li>Segurança e responsabilidade</li>
+        </ul>
+
+      </div>
+
+    </div>
+
   </section>
 
   <section class="produtos-section" id="produtos">
@@ -874,7 +1056,7 @@
 
         <img src="assets/eletroduto 1.jpg" class="produto-imagem" />
 
-        <h2>Eletroduto</h2>
+        <h2>Eletrodutos</h2>
 
         <p>
           Os eletrodutos galvanizados a fogo
@@ -942,7 +1124,7 @@
         </div>
 
         <p>
-          Acabamento diferenciado, exclusividade no produto e com certificado de qualidade e dentro das normas técnicas.
+          Produtos com alto padrão de qualidade e rigoroso controle técnico, em conformidade com as normas exigidas.
         </p>
 
       </div>
@@ -956,7 +1138,7 @@
         </div>
 
         <p>
-          Excelência em qualidade e o menor prazo de entrega do mercado.
+          Uma equipe preparada para oferecer soluções com agilidade, confiança e suporte especializado.
         </p>
 
       </div>
@@ -970,11 +1152,7 @@
         </div>
 
         <p>
-          Logística facilitada: Entregamos diretamente na sua transportadora.
-
-          <span class="observacao">
-            *Consulte valor mínimo
-          </span>
+          Sua demanda atendida com rapidez, segurança e envio facilitado para transportadora indicada.
         </p>
 
       </div>
@@ -1051,9 +1229,6 @@
           <input type="text" name="empresa" placeholder="*Empresa">
           <span class="mensagem-erro">Preencha a empresa</span>
 
-          <input type="email" name="email" placeholder="*Email">
-          <span class="mensagem-erro">Preencha o email</span>
-
           <input type="text" name="telefone" placeholder="*Telefone">
           <span class="mensagem-erro">Preencha o telefone</span>
 
@@ -1075,15 +1250,13 @@
         </p>
 
         <p>
-          comercial@eletubos.com
+          <a href="mailto:comercial@eletubos.com.br">
+            comercial@eletubos.com.br
+          </a>
         </p>
 
         <p>
-          Telefone Comercial: (19) 3115-3050
-        </p>
-
-        <p>
-          Telefone Logística: (19) 3115-3051
+          Telefone: (19) 3115-3050
         </p>
 
         <div class="carreiras">
@@ -1095,7 +1268,9 @@
           </p>
 
           <p>
-            comercial@eletubos.com.br
+            <a href="mailto:comercial@eletubos.com.br?subject=Currículo&body=Olá,%20segue%20meu%20currículo.">
+              comercial@eletubos.com.br
+            </a>
           </p>
 
         </div>
@@ -1128,6 +1303,7 @@
 
   </section>
 
+  <!-- VALIDAÇÃO FORMULÁRIO -->
   <script>
 
     const botao = document.getElementById("enviar-btn");
@@ -1157,7 +1333,27 @@
       });
 
       if (valido) {
-        alert("Formulário válido!");
+
+        const nome = formulario.nome.value;
+        const empresa = formulario.empresa.value;
+        const telefone = formulario.telefone.value;
+        const mensagem = formulario.mensagem.value;
+
+        const destinatario = "comercial@eletubos.com.br";
+
+        const assunto = encodeURIComponent(`Contato para orçamento pelo site - ${empresa}`);
+
+        const corpo = encodeURIComponent(
+          `Nome: ${nome}
+Empresa: ${empresa}
+Telefone: ${telefone}
+
+Mensagem:
+${mensagem}`
+        );
+
+        window.location.href = `mailto:${destinatario}?subject=${assunto}&body=${corpo}`;
+
       }
 
     });
@@ -1183,6 +1379,7 @@
 
   </script>
 
+  <!-- MENU ATIVO -->
   <script>
 
     const sections = document.querySelectorAll("section[id]");
@@ -1224,7 +1421,53 @@
 
   </script>
 
+  <!-- CARROSSEL -->
   <script>
+    const conteudosHero = [
+
+      {
+        titulo: "Se é elétrico, nós entendemos!",
+        botao: "Saiba mais"
+      },
+
+      {
+        titulo: "Qualidade e segurança em eletrodutos",
+        botao: "Conheça nossos produtos"
+      },
+
+      {
+        titulo: "Soluções para instalações elétricas",
+        botao: "Entre em contato"
+      }
+
+    ];
+
+    const heroTitle = document.getElementById("hero-title");
+    const heroButton = document.getElementById("hero-button");
+
+    heroButton.addEventListener("click", () => {
+
+      if (indexAtual === 0) {
+
+        document
+          .getElementById("quem-somos")
+          .scrollIntoView({ behavior: "smooth" });
+
+      } else if (indexAtual === 1) {
+
+        document
+          .getElementById("produtos")
+          .scrollIntoView({ behavior: "smooth" });
+
+      } else {
+
+        document
+          .getElementById("contato")
+          .scrollIntoView({ behavior: "smooth" });
+
+      }
+
+    });
 
     const imagens = document.querySelectorAll(".hero-image");
     const dots = document.querySelectorAll(".dot");
@@ -1244,6 +1487,19 @@
       dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === index);
       });
+
+      heroTitle.style.opacity = 0;
+      heroButton.style.opacity = 0;
+
+      setTimeout(() => {
+
+        heroTitle.innerHTML = conteudosHero[index].titulo;
+        heroButton.innerHTML = conteudosHero[index].botao;
+
+        heroTitle.style.opacity = 1;
+        heroButton.style.opacity = 1;
+
+      }, 250);
 
       indexAtual = index;
 
